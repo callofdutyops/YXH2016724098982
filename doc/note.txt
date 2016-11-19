@@ -1,0 +1,7 @@
+由于Normal和Others类的图像格式、图片内容格式均与其他类别不同，因此需要分别执行预处理操作。
+对于除了Normal和Others类别的TIFF图像执行以下操作，去除底部标注以及黑边，resize为512x512大小，并转换为png格式：
+mogrify -crop 2464x1670+12+0 +repage -fuzz 20% -trim +repage -resize 512x512! -format png *.tif
+转换为png格式的原因是TIFF格式实际上不是一种严格标准的格式【引用】，这对后续处理可能会带来意向不到的问题，并且
+保留基本相同信息的情况下png格式占用空间较小。
+而对于Normal和Others类别的TIFF图像则执行以下操作：
+mogrify -crop 2200x1728+0+0 +repage -fuzz 20% -trim +repage -resize 512x512! -format png *.jpg

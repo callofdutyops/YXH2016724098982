@@ -1,0 +1,7 @@
+BRVO_CRVO: BRVO(视网膜分支静脉阻塞)&CRVO(视网膜中央静脉阻塞)
+CSC: CSC(中心性浆液性视网膜脉络膜病变)
+DR: DR(糖尿病视网膜病变)
+PM: PM(高度近视)
+AMD: 湿性AMD(湿性老年黄斑变性)
+Others: 其他非正常眼底图片
+ALLinONE: 全部非正常眼底图片
