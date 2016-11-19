@@ -28,7 +28,7 @@ import eye_input
 FLAGS = tf.app.flags.FLAGS
 
 # Basic model parameters.
-tf.app.flags.DEFINE_integer('batch_size', 64,
+tf.app.flags.DEFINE_integer('batch_size', 1,
                             """Number of images to process in a batch.""")
 tf.app.flags.DEFINE_string('data_dir', '/home/hp/Documents/DeepLearning/MyProjects/Data/eye/new96',
                            """Path to the eye data directory.""")

@@ -12,7 +12,7 @@ import tensorflow as tf
 # image size of 512 x 512. This smaller size can reduce consuming of computer memory.
 # If one alters this number, then the entire model architecture will change and
 # any model would need to be retrained.
-IMAGE_SIZE = 64
+IMAGE_SIZE = 32
 
 # Global constants describing the eye data set.
 NUM_CLASSES = 7
@@ -63,11 +63,11 @@ def read_eye(filename_queue):
 
     # The first bytes represent the label, which we convert from uint8->int32.
     # Note that the number 55 is the length of str
-    # "/home/hp/Documents/DeepLearning/MyProjects/Data/eye/[tr,te]". We
+    # "/home/hp/Documents/DeepLearning/MyProjects/Data/eye/[tr,te]/". We
     # only want to get the folder name after this str so we do a slice on it.
     # And also, the ops of "add(result.label, -65)" is to get the label in right range
     # which is 0..6.
-    result.label = tf.cast(tf.slice(label_decoded, [55], [label_bytes]), tf.int32)
+    result.label = tf.cast(tf.slice(label_decoded, [61], [label_bytes]), tf.int32)
     result.label = tf.add(result.label, -65)
 
     result.uint8image = tf.image.decode_png(value)
